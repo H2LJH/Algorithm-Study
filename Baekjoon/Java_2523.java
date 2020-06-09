@@ -4,12 +4,19 @@ public class Java_2523
 {
     public static void main(String[] args) 
     { 
-        Scanner sc = new Scanner(System.in); 
-        int n = sc.nextInt(); 
+        Scanner sc = new Scanner(System.in);
+        int num  = 0;
+        while(true)
+        {
+            num = sc.nextInt(); 
+
+            if(num >= 1 && num <= 100)
+                break;
+        }
         sc.close();
-        for (int i=0; i<=2*n-1; i++)
+        for (int i=0; i<=2*num-1; i++)
         { 
-            if (i<=n)
+            if (i<=num)
             { 
                 for(int j=0; j<i; j++) 
                     System.out.print("*");
@@ -18,11 +25,12 @@ public class Java_2523
             }
             else
             { 
-                for(int j=0; j<2*n-i; j++) 
+                for(int j=0; j<2*num-i; j++) 
                     System.out.print("*"); 
 
                 System.out.println(); 
             } 
-        } 
+        }
+
     }
 }
