@@ -14,5 +14,6 @@ public class Java_10951
             
             System.out.printf("%d\n",c);
         }
+        sc.close();
     }    
 }

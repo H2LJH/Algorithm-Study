@@ -18,5 +18,6 @@ public class Java_10952
             else 
                 System.out.println(c);
         }
+        sc.close();
     }    
 }
