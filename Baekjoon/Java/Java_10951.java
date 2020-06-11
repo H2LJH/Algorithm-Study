@@ -1,22 +1,20 @@
+package Java;
+
 import java.util.Scanner;
 
-public class Java_10952 
+public class Java_10951 
 {
     public static void main(String[] args) 
     {
         Scanner sc = new Scanner(System.in);
 
-        while(true)    
+        while(sc.hasNextInt())    
         {
             int a = sc.nextInt();
             int b = sc.nextInt();
             int c = a+b;
             
-            if(a == 0 && b == 0)
-                break;
-
-            else 
-                System.out.println(c);
+            System.out.printf("%d\n",c);
         }
         sc.close();
     }    
