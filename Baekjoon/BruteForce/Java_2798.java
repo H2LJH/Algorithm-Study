@@ -7,43 +7,32 @@ public class Java_2798
 	public static void main(String[] args) 
 	{
 		Scanner sc = new Scanner(System.in);
-		int[] arrNum;
-		int lineNum = 0;
+		int[] arrCard;
+		int maxCards = 0;
 		int maxNum = 0;
 		int sum = 0;
 		
-		while(true)
+		maxCards = sc.nextInt();
+		maxNum = sc.nextInt();
+		arrCard = new int[maxCards];
+
+		for (int i = 0; i < arrCard.length; ++i)
+			arrCard[i] = sc.nextInt();
+		
+		for(int i=0; i < maxCards-2; ++i)
 		{
-			lineNum = sc.nextInt();
-			maxNum = sc.nextInt();
-			
-			if((lineNum < 3 && lineNum > 100) && (maxNum < 10 && maxNum > 300000))
-				continue;
-			
-			arrNum = new int[lineNum];
-			
-			for (int i = 0; i < arrNum.length; ++i)
+			int temp;
+			for(int j=i+1; j < maxCards-1; ++j)
 			{
-				arrNum[i] = sc.nextInt();
-				if(arrNum[i] > 100_000)
-					--i;
-			}
-			
-			break;
-		}
-				
-		for (int i = 0; i < arrNum.length; ++i) 
-		{
-			for (int j = 0; j < arrNum.length; ++j) 
-			{	
-				int temp = 0;
-				if (arrNum[i] >= arrNum[j]) 
+				for(int k=j+1; k < maxCards; ++k)
 				{
-					temp = arrNum[i];
-					arrNum[i] = arrNum[j];
-					arrNum[j] = temp;
+					temp = arrCard[i]+arrCard[j]+arrCard[k];
+					if(temp > sum && temp <= maxNum)
+						sum = temp;
 				}
 			}
 		}
+		System.out.println(sum);
+		sc.close();
 	}
 }
